@@ -12,12 +12,10 @@ function getBreeds() {
     .then(breeds => {
       fillBreedsSelect(breeds);
       setSlimSelect();
-      changeLoaderHiddenClass();
       selectEl.classList.toggle('is-hidden');
     })
-    .catch(error => {
-      fetchErr();
-    });
+    .catch(() => fetchErr())
+    .finally(() => changeLoaderHiddenClass());
 }
 
 function fillBreedsSelect(breeds) {
@@ -41,12 +39,10 @@ function handleBreedSelect(event) {
   // return info about chosen cat
   fetchCatByBreed(breedId)
     .then(data => {
-      changeLoaderHiddenClass();
       return createMarkupCatInfo(data);
     })
-    .catch(error => {
-      fetchErr();
-    });
+    .catch(() => fetchErr())
+    .finally(() => changeLoaderHiddenClass());
 }
 
 function createMarkupCatInfo(catInfo) {
