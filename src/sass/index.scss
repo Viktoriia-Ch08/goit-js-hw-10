@@ -1,2 +1,111 @@
 @import './common';
 @import './example';
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Preahvihear', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+
+    background-image: linear-gradient(90deg,
+    rgba(2, 0, 36, 0.5) 0%, 
+    rgba(32, 32, 185, 0.5) 19%, 
+    rgba(249, 246, 51, 0.5) 100%), url(../images/cats_bg@1x.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+
+@media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        body {
+            background-image: url(../images/cats_bg@2x.jpg);
+        }
+    }
+}
+
+
+
+p, h2{
+    margin: 0;
+}
+
+h2{
+    margin-top: 50px;
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+}
+
+.temperament-text{
+    font-weight: bold;
+}
+
+.is-hidden{
+    display: none;
+}
+.container{
+width: 1200px;
+margin-top: 20px;
+margin-left: auto;
+margin-right: auto;
+}        
+.cat-info{
+    display: flex;
+    gap: 20px;
+    margin-top: 21px;
+}
+.cat-info-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    padding-top: 10px;
+    padding-left: 20px;
+background-color: rgba(251,
+    249,
+    249, 0.8);
+}
+
+
+
+
+.loader {
+    position: absolute;
+    top: 100px;
+    left: 500px;
+    right: 400px;
+    width: 120px;
+    height: 120px;
+    border: 5px solid #FFF;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+.loader::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #FF3D00;
+    width: 16px;
+    height: 16px;
+    transform: translate(-50%, 50%);
+    border-radius: 50%;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
